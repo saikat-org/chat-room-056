@@ -1,2 +1,13 @@
 <h1>Chat Room</h1>
+
+<h2>Broadcast Message</h2>
+<form class="nifty_form" id="new_article" action="page/broadcast" accept-charset="UTF-8" method="post" data-remote="true">
+  <input type="hidden" name="authenticity_token" value="NRkFyRWxdYNfUg7vYxLOp2SLf93lvnl+QwDWorR42Dp6yZXPhHEb6arhDOIWcqGit8jfnrPwL781/xlrzj63TA==" />
+  <textarea name="article[body]" id="article_body" cols="60" rows="12"></textarea>
+  <div>
+    <input type="submit" name="commit" value="Send" data-disable-with="Create" />
+  </div>
+</form>
+<div>
+<h2>Received Messages</h2>
 <div id="messages"></div>
