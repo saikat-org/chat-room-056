@@ -4,4 +4,13 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   Character.create(name: 'Luke', movie: movies.first)A
+
+johnny = User.create first_name: "Johnny",   last_name: "Depp"
+saikat = User.create first_name: "Saikat", last_name: "Sarkar"
+sumit  = User.create first_name: "Sumit",  last_name: "Sarkar"
+
+Message.create title: "This is a message from John",   user: johnny
+Message.create title: "This is a message from Saikat", user: saikat
+Message.create title: "This is a message from Sumit",  user: sumit
+
