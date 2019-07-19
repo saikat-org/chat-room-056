@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post 'page/broadcast'
 
   resources :users, only: [:index]
-  resources :personal_messages, only: [:new, :create]
+  resources :private_conversations, only: [:new, :create]
   resources :conversations, only: [:index, :show]
 
   # mount ActionCable.server => '/cable'

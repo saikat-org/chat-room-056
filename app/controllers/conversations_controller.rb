@@ -9,7 +9,7 @@ class ConversationsController < ApplicationController
 
   def show
     @conversation = Conversation.find_by(id: params[:id])
-    @personal_message = PersonalMessage.new
+    @private_conversation = PrivateConversation.new
   end
 end
 
