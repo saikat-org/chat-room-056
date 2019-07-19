@@ -1,6 +1,6 @@
-class CreatePersonalMessage < ActiveRecord::Migration[5.2]
+class CreatePrivateConversation < ActiveRecord::Migration[5.2]
   def change
-    create_table :personal_messages do |t|
+    create_table :private_conversations do |t|
       t.text :body
       t.belongs_to :conversation, foreign_key: true
       t.belongs_to :user, foreign_key: true

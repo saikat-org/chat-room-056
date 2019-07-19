@@ -1,15 +1,15 @@
-class PersonalMessagesController < ApplicationController
+class PrivateConversationsController < ApplicationController
   before_action :find_conversation!
 
   def new
     redirect_to conversation_path(@conversation) and return if @conversation
-    @personal_message = current_user.personal_messages.build
+    @personal_message = current_user.private_conversations.build
   end
 
   def create
     @conversation ||= Conversation.create(author_id: current_user.id,
                                           receiver_id: @receiver.id)
-    @personal_message = current_user.personal_messages.build(personal_message_params)
+    @personal_message = current_user.private_conversations.build(personal_message_params)
     @personal_message.conversation_id = @conversation.id
     @personal_message.save!
 
@@ -20,7 +20,7 @@ class PersonalMessagesController < ApplicationController
   private
 
   def personal_message_params
-    params.require(:personal_message).permit(:body)
+    params.require(:private_conversation).permit(:body)
   end
 
   def find_conversation!
