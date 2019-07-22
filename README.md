@@ -1,4 +1,6 @@
-# README
+[![Build Status](https://api.travis-ci.org/saikat-org/chat_room.svg?branch=master)](http://travis-ci.org/saikat-org/chat_room)
+
+# Chat Room
 chat_room is created using Rails action-cable. This chat-room supports broadcasting messages to a channel. All the subscribers of the channel are able to see the messages published by any user.
 
 ## Tutorial source
