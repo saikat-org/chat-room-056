@@ -1,0 +1,3 @@
+set -e
+echo "==> Running specs .."
+bin/rspec spec/*
