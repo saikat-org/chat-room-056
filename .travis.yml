@@ -21,7 +21,7 @@ addons:
 deploy:
   provider: heroku
   api_key:
-    secure: 5d4cd4ee-ab00-4782-ba94-61e53e4a6e8e
+    secure:  NnaP2mDBAZpkgoTz6GTlrOgR2KM+z/8GhT1kt+Ei8K/plst9nALOQtysa/HDRPzkjUw8ilx/AhrOeFSvphbT5/SCwLu18ZWCfZFAeuPvT1GS0iONoyagVtDFquzClWQTAYxVZpgH3CVMbpsyYo8VHuy63MLi6HkxCqGB3enqQdMr2PIdsE8IsEy57iStdhH2dx6B7r9/FA3SH2bQjMMMnernsSLoJ4la2KGtU2wxZTkkMW1xWoN4OlAfFCAOba9NAckbEURntYcR6YYQCoRapAJ4xlfjTw4QcqEa97cvSFMWDsX7L4I5Eqq3ILT+G6gNowyp0pZsFjH+Wi9obKmL27uL7P53fKMjIezDFPPlj3BJpSxRg6MuFlhxoOpXFUFYAtKPxpzYIZ0P0d2drTs1FlWkZhi+lMg7qBrcs8tDd5Da4nOHWelHZ477cTuDx5Bf1cqPuoM66BvJxrSsnsAcG6UR+J6BG06KBcO422Q3yAyJ4WZiydOBw5AtsmN4B3I+QdFTB3etw5YRuXDvBk+GzXHL7J4ksIUzo9uQY0cToFpRpLAjqUCauX17KyZNE4slsWiRWoSFrjrPN4kH4+gCQCncdzCl0rHPempyKDQ2E3cSVKjouzA7fqItO//6xsxwzcRlmFyi5ol3fcM43bEn7nQL/JNh1el0rPtwBQ6WKm0=
     app: chat-room-056
     on:
       repo: saikat-org/chat_room
