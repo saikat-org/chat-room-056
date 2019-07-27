@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.org/saikat-org/chat_room.svg?branch=master)](http://travis-ci.org/saikat-org/chat_room)
+[![Build Status](https://api.travis-ci.org/saikat-org/chat-room-056.svg?branch=master)](http://travis-ci.org/saikat-org/chat-room-056)
 [![Code Climate](https://codeclimate.com/github/saikat-org/chat_room.svg)](https://codeclimate.com/github/saikat-org/chat_room)
 
 # Chat Room
