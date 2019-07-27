@@ -12,7 +12,8 @@ module ApplicationCable
       if verified_user = User.find_by(id:  default_user_id)
         verified_user
       else
-        reject_unauthorized_connection
+        return nil
+        # reject_unauthorized_connection
       end
     end
   end
