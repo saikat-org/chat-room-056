@@ -7,8 +7,7 @@ class PrivateConversationsController < ApplicationController
   end
 
   def create
-    @conversation ||= Conversation.create(author_id: current_user.id,
-                                          receiver_id: @receiver.id)
+    @conversation ||= Conversation.create(author_id: current_user.id, receiver_id: @receiver.id)
     @personal_message = current_user.private_conversations.build(personal_message_params)
     @personal_message.conversation_id = @conversation.id
     @personal_message.save!
