@@ -1,5 +1,6 @@
-<h1>Chatting with <%= @conversation.with(current_user).email %></h1>
+<%= render "common/header" %>
 
+<h1>Chatting with <%= @conversation.with(current_user).email %></h1>
 <div id="conversation-main">
   <div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
     <%= render @conversation.private_conversations %>
