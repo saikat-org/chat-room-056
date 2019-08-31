@@ -11,8 +11,7 @@ class PrivateConversationsController < ApplicationController
     @personal_message = current_user.private_conversations.build(personal_message_params)
     @personal_message.conversation_id = @conversation.id
     @personal_message.save!
-
-    flash[:success] = "Your message was sent!"
+    ActionCable.server.broadcast "notifications_#{@conversation.receiver_id}_channel", message: @personal_message.body
     redirect_to conversation_path(@conversation)
   end
 

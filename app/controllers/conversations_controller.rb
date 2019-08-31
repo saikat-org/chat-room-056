@@ -8,6 +8,7 @@ class ConversationsController < ApplicationController
   end
 
   def show
+    gon.current_user_id = current_user.id
     @conversation = Conversation.find_by(id: params[:id])
     @private_conversation = PrivateConversation.new
   end
