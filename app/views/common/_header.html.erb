@@ -1,2 +1,2 @@
-<span>Welcome <%= current_user.email %> </span>
+<span>Welcome <%= current_user.first_name %> <%= current_user.last_name %> </span>
 <%= button_to "Signout", destroy_user_session_path, {method: :delete} %>

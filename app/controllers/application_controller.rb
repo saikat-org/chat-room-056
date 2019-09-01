@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
   helper_method :emojify
+  protect_from_forgery with: :exception
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_user!
 
   def emojify(content)
     content.to_str.gsub(/:([\w+-]+):/) do |match|
@@ -9,5 +12,12 @@ class ApplicationController < ActionController::Base
         match
       end
     end.html_safe if content.present?
+  end
+
+  private
+  def configure_permitted_parameters
+    added_attrs = [:first_name, :last_name, :email, :password, :password_confirmation]
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 end
