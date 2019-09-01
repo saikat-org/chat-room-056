@@ -1,2 +1,11 @@
-<span>Welcome <%= current_user.first_name %> <%= current_user.last_name %> </span>
-<%= button_to "Signout", destroy_user_session_path, {method: :delete} %>
+<table>
+  <tr>
+    <td>Home</td>
+    <td>
+       <span align="right">
+         <span><strong><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></strong></span>
+         <%= link_to "signout", destroy_user_session_path, {method: :delete} %>
+       </span>
+     </td>
+ </tr>
+</table>
