@@ -11,7 +11,10 @@ class PrivateConversationsController < ApplicationController
     @personal_message = current_user.private_conversations.build(personal_message_params)
     @personal_message.conversation_id = @conversation.id
     @personal_message.save!
-    ActionCable.server.broadcast "notifications_#{@conversation.receiver_id}_channel", message: @personal_message.body
+    ActionCable.server.broadcast "notifications_#{@conversation.receiver_id}_channel", 
+                                     { message: emojify(@personal_message.body), 
+                                       created_at: @personal_message.created_at, 
+                                       email: current_user.email}
     redirect_to conversation_path(@conversation)
   end
 
