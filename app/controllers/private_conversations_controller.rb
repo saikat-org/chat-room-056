@@ -11,14 +11,23 @@ class PrivateConversationsController < ApplicationController
     @personal_message = current_user.private_conversations.build(personal_message_params)
     @personal_message.conversation_id = @conversation.id
     @personal_message.save!
-    ActionCable.server.broadcast "notifications_#{@conversation.receiver_id}_channel", 
-                                     { message: emojify(@personal_message.body), 
-                                       created_at: @personal_message.created_at, 
-                                       email: current_user.email}
+    ActionCable.server.broadcast notifying_channel, message_hash
     redirect_to conversation_path(@conversation)
   end
 
   private
+
+  def notifying_channel
+    notifying_person_id = (current_user.id == @conversation.author_id) ? @conversation.receiver_id : @conversation.author_id 
+    "notifications_#{notifying_person_id}_channel"
+  end
+
+  def message_hash
+    { message: emojify(@personal_message.body), 
+      created_at: @personal_message.created_at, 
+      email: current_user.email
+    }
+  end
 
   def personal_message_params
     params.require(:private_conversation).permit(:body)
