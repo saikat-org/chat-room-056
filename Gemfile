@@ -10,6 +10,7 @@ gem 'jquery-rails'
 
 # gem for emoji
 gem 'gemoji', '~> 3.0'
+gem 'gon', '~> 6.0', '>= 6.0.1'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
