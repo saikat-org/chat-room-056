@@ -1,4 +1,7 @@
-App.inbox = App.cable.subscriptions.create "NotificationsChannel",
+App.cable.subscriptions.create {
+      channel: "NotificationsChannel"
+      user_id: gon.current_user_id
+    },
     connected: ->
       # Called when subscription is connected
     disconnected: ->
