@@ -1,11 +1,15 @@
-<table>
-  <tr>
-    <td>Home</td>
-    <td>
-       <span align="right">
-         <span><strong><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></strong></span>
-         <%= link_to "signout", destroy_user_session_path, {method: :delete} %>
-       </span>
-     </td>
- </tr>
-</table>
+<%= content_for :head do %>
+  <%= stylesheet_link_tag 'header' %>
+<% end %>
+
+<div class="container-1">
+  <div class="box-1">
+    <%= link_to "Home", root_path %>
+  </div>
+  <div class="box-2">
+    <span><strong><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></strong></span>
+    <%= link_to "signout", destroy_user_session_path, {method: :delete} %>
+  </div>
+</div>
+<hr>
+<hr>
