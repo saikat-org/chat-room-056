@@ -23,9 +23,15 @@ class PrivateConversationsController < ApplicationController
   end
 
   def message_hash
-    { message: emojify(@personal_message.body), 
+    avatar = ""
+    if current_user.avatar.attached?
+      avatar = "<span class='avatar'><image src='" +  url_for(current_user.avatar) + "'></span>"
+    end
+    { 
+      message: emojify(@personal_message.body), 
       created_at: @personal_message.created_at.strftime("%F, %I:%M %p"), 
-      user: current_user.full_name
+      user: current_user.full_name,
+      avatar: avatar
     }
   end
 
