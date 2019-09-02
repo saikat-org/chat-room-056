@@ -6,7 +6,13 @@
   <div class="box-1">
     <%= link_to "Home", root_path %>
   </div>
-  <div class="box-2">
+  <div class="box-2"></div>
+  <div class="box-3">
+    <% if current_user.avatar.attached? %>
+      <span class="avatar">
+        <image src="<%=(url_for(current_user.avatar))%>">
+      </span>
+    <% end %>
     <span><strong><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></strong></span>
     <%= link_to "signout", destroy_user_session_path, {method: :delete} %>
   </div>
