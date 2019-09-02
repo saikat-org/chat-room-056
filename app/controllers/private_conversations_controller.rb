@@ -24,8 +24,8 @@ class PrivateConversationsController < ApplicationController
 
   def message_hash
     { message: emojify(@personal_message.body), 
-      created_at: @personal_message.created_at, 
-      email: current_user.email
+      created_at: @personal_message.created_at.strftime("%F, %I:%M %p"), 
+      user: current_user.full_name
     }
   end
 

@@ -7,5 +7,4 @@ App.cable.subscriptions.create {
       user_id: gon.current_user_id
     },
     received: (data) ->
-      $('#conversation-body').append "<p>" + data.message + "</p>" + "<p> at <strong>" + data.created_at + "</strong><br>by <strong>" + data.email + "</strong></p>"
-
+      $('#conversation-body').append  "<p><strong>" + data.user + " </strong>" + data.created_at + "</p><p>" + data.message + "</p><hr>"

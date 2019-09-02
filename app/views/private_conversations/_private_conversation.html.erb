@@ -1,4 +1,7 @@
+<% if private_conversation.user == current_user %>
+  <p><strong>You</strong>  <%= private_conversation.created_at.strftime("%F, %I:%M %p") %></p>
+<% else %>
+  <p><strong><%=private_conversation.user.full_name %></strong>  <%= private_conversation.created_at.strftime("%F, %I:%M %p") %></p>
+<% end %>
 <p><%= emojify private_conversation.body %></p>
-<p>at <strong><%= private_conversation.created_at %></strong><br>
-    by <strong><%= private_conversation.user.email %></strong></p>
 <hr>
