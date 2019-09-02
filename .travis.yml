@@ -25,7 +25,10 @@ deploy:
     app: chat-room-056
     on:
       repo: saikat-org/chat-room-056
-    run: "rake db:migrate"
+    run:
+      - "bin/rake db:migrate"
+      - restart
+      - "bin/rake cleanup"
 env:
   global:
     secure: F6RMRp3EqJegV6We8AoOCPXIAsqklI+3+yFW4xB7PTwNMeqTSN5ebQrzLgIKxS2wEkTeOQkPBTk6R68culelKqvAA2cbco0RqK+4KlFabGsU1phxO0WrM4QAMqQ3Kd1qbl8lkPovJOwunnQJn9NsYLrCeoWlH6ymSjJdkGffp0Nd1uuMFWL1a/JXhbmAjfTtxdD2BPVY0YfKhjr8BrhrLAsEhcYmxh7Aig1G0JCT1Kbv2ZdxwE6fqH46cskxk1IhjFSd/HW5WRzwavsHcc9T8tS7Xbfu/3ClKKUCvECxhau8yecR7x+vCFmodjpZ6aSZhrSZX++wiFuGw+vXZopfWMicUiHeFmMFuTT0dHjkmkDxSfABSaAbHbTGrgsskpEmZWXGj09B/TR4Vvhq2UUzrQ4IzlGcMP0v4b+snkPBb1qDM1gsfnORCT6l5+/kkGAWR3nnjZlubVrfvuLQX4HM7OCXEeGDlOuunL9+J6Gwn8PtnWF+AQioi/w3JQR/9waRLvVKem9FbVTWMaoHFH3py7aI85JdtjMokbCtTaWSnfKSkUW91nxNgSU7/3ZY9np8FazrtyzL6+jN0PjnMA0L6Nbl02elzCQYANnLV6xoYa1IGrbJuTv2YaJTWH5F6LbptmNQHHY/RBbwI47GJkmC21X2aD26Fv6+AMEGV3vHn1s=
