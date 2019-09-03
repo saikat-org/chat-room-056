@@ -1,5 +1,6 @@
 <% conversation_user = private_conversation.user %>
 <% person = (conversation_user == current_user) ? "You" : private_conversation.user.full_name %>
+
 <p>
   <% if conversation_user.avatar.attached? %>
     <span class="avatar">
@@ -8,4 +9,12 @@
   <% end %>
   <strong><%=person%></strong>  <%= private_conversation.created_at.strftime("%F, %I:%M %p") %>
 </p>
-<p><%= emojify private_conversation.body %></p>
+<p><%= Emojify::emojify private_conversation.body %></p>
+
+<p>
+  <% if private_conversation.attachment.attached? %>
+    <div class="attachment">
+      <image src="<%=(url_for(private_conversation.attachment))%>">
+    </div>
+  <% end %>
+</p> 

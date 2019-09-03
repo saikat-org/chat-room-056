@@ -5,11 +5,14 @@
   <div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
     <%= render @conversation.private_conversations %>
   </div>
-
   <%= form_for @private_conversation do |f| %>
     <%= hidden_field_tag 'conversation_id', @conversation.id %>
     <%= f.label :body %>
     <%= f.text_area :body %>
+    <br>
+    <%= f.label "Image" %>
+    <%= f.file_field :attachment %>
+    <br>
     <%= f.submit %>
   <% end %>
 </div>
