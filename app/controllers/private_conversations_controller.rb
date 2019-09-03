@@ -3,40 +3,20 @@ class PrivateConversationsController < ApplicationController
 
   def new
     redirect_to conversation_path(@conversation) and return if @conversation
-    @personal_message = current_user.private_conversations.build
+    @private_conversation = current_user.private_conversations.build
   end
 
   def create
     @conversation ||= Conversation.create(author_id: current_user.id, receiver_id: @receiver.id)
-    @personal_message = current_user.private_conversations.build(personal_message_params)
-    @personal_message.conversation_id = @conversation.id
-    @personal_message.save!
-    ActionCable.server.broadcast notifying_channel, message_hash
+    @private_conversation = PrivateConversation.create(personal_message_params, current_user, @conversation)
+    @private_conversation.notify(current_user)
     redirect_to conversation_path(@conversation)
   end
 
   private
 
-  def notifying_channel
-    notifying_person_id = (current_user.id == @conversation.author_id) ? @conversation.receiver_id : @conversation.author_id 
-    "notifications_#{notifying_person_id}_channel"
-  end
-
-  def message_hash
-    avatar = ""
-    if current_user.avatar.attached?
-      avatar = "<span class='avatar'><image src='" +  url_for(current_user.avatar) + "'></span>"
-    end
-    { 
-      message: emojify(@personal_message.body), 
-      created_at: @personal_message.created_at.strftime("%F, %I:%M %p"), 
-      user: current_user.full_name,
-      avatar: avatar
-    }
-  end
-
   def personal_message_params
-    params.require(:private_conversation).permit(:body)
+    params.require(:private_conversation).permit(:body, :attachment)
   end
 
   def find_conversation!

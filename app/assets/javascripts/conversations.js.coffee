@@ -8,3 +8,4 @@ App.cable.subscriptions.create {
     },
     received: (data) ->
       $('#conversation-body').append  "<p>" + data.avatar + "<strong>" + data.user + " </strong>" + data.created_at + "</p><p>" + data.message + "</p>"
+      $('#conversation-body').append  "<p>" + data.attachment + "</p>"
