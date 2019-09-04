@@ -33,6 +33,8 @@ gem 'redis', '~> 4.0'
 
 gem 'devise'
 
+gem "aws-sdk-s3", require: false
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
