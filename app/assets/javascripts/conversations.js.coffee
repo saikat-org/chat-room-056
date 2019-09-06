@@ -12,3 +12,5 @@ App.cable.subscriptions.create {
     else
       message = ""
     $('#conversation-body').append "<div class='media border p-2'>" + data.avatar + "<div class='media-body'>" + "<h6>" + data.user + " <small><i>Posted on " + data.created_at + "</i></small></h6>" + message + data.attachment + '</div>' + '</div>'
+    objDiv = document.getElementById("conversation-main")
+    objDiv.scrollTop = objDiv.scrollHeight
