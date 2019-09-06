@@ -26,7 +26,7 @@ class PrivateConversation < ApplicationRecord
 
     attachment_html = ""
     if attachment.attached?
-      attachment_html = "<div class='attachment'><image src='" + rails_blob_path(attachment, only_path: true) + "' style='width:30px;height:auto;'></div>"
+      attachment_html = "<div class='attachment'><image src='" + rails_blob_path(attachment, only_path: true) + "' style='width:80px;height:auto;'></div>"
     end
 
     { 
