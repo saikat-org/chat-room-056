@@ -8,7 +8,7 @@
     <p><%= Emojify::emojify private_conversation.body %></p>
     <% if private_conversation.attachment.attached? %>
       <div class="attachment">
-        <image src="<%=(url_for(private_conversation.attachment))%>" style="width:30px;height:auto;">
+        <image src="<%=(url_for(private_conversation.attachment))%>" style="width:80px;height:auto;">
       </div>
     <% end %>
   </div>
