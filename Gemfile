@@ -7,6 +7,7 @@ gem 'rails', '~> 5.2.3'
 
 gem 'pg'
 gem 'jquery-rails'
+gem 'bootstrap', '~> 4.0'
 
 # gem for emoji
 gem 'gemoji', '~> 3.0'

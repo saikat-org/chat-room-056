@@ -1,21 +1,6 @@
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.avatar {
-  width: 18px;
-  min-height: 18px;
-  max-height: auto;
-  float: left;
-  margin-right: 3px;
-}
-
-.attachment {
-  width: 100px;
-  min-height: 100px;
-  max-height: auto;
-  float: center;
+.attachment img {
+  width: auto;
+  height: 150px;
   margin-right: 3px;
 }
 

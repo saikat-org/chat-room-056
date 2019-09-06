@@ -2,7 +2,7 @@ module Emojify
   def self.emojify(content)
     content.to_str.gsub(/:([\w+-]+):/) do |match|
       if emoji = Emoji.find_by_alias($1)
-        %(<img alt="#$1" src="/images/emoji/#{emoji.image_filename}" style="vertical-align:middle" width="20" height="20" />)
+        %(<img alt="#$1" src="/images/emoji/#{emoji.image_filename}" style="vertical-align:middle"/>)
       else
         match
       end

@@ -1,8 +1,15 @@
 <%= render "common/header" %>
 
-<h1>Rooms</h1>
-<ul>
-  <li>Chat Room 1 | <%= link_to 'send a message', page_index_path %></li>
-</ul>
-<h1>Users</h1>
-<ul><%= render @users %></ul>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-5">
+    <h1>Rooms</h1>
+    <ul>
+      <li>Chat Room 1 | <%= link_to 'send a message', page_index_path %></li>
+    </ul>
+    <h1>Users</h1>
+    <ul><%= render @users %></ul>
+  </div>
+  <div class="col-5"></div>
+</div>
+
