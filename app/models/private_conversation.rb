@@ -20,12 +20,13 @@ class PrivateConversation < ApplicationRecord
   def message_hash(current_user)
     avatar_html = ""
     if current_user.avatar.attached?
-      avatar_html = "<span class='avatar'><image src='" + rails_blob_path(current_user.avatar, only_path: true) + "'></span>"
+      person = (user == current_user) ? "You" : user.full_name
+      avatar_html = "<img src='" + rails_blob_path(current_user.avatar, only_path: true) + "' alt=" + person + " class='mr-3 mt-3 rounded-circle border border-dark' style='width:30px;'>"
     end
 
     attachment_html = ""
     if attachment.attached?
-      attachment_html = "<div class='attachment'><image src='" + rails_blob_path(attachment, only_path: true) + "'></div>"
+      attachment_html = "<div class='attachment'><image src='" + rails_blob_path(attachment, only_path: true) + "' style='width:30px;height:auto;'></div>"
     end
 
     { 

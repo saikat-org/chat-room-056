@@ -1,20 +1,16 @@
 <% conversation_user = private_conversation.user %>
 <% person = (conversation_user == current_user) ? "You" : private_conversation.user.full_name %>
 
-<p>
-  <% if conversation_user.avatar.attached? %>
-    <span class="avatar">
-      <image src="<%=(url_for(conversation_user.avatar))%>">
-    </span>
-  <% end %>
-  <strong><%=person%></strong>  <%= private_conversation.created_at.strftime("%F, %I:%M %p") %>
-</p>
-<p><%= Emojify::emojify private_conversation.body %></p>
+<div class="media border p-2">
+  <img src="<%=(url_for(conversation_user.avatar))%>" alt=<%= person %> class="mr-3 mt-3 rounded-circle border border-dark" style="width:30px;">
+  <div class="media-body">
+    <h6><%= person %> <small><i>Posted on <%= private_conversation.created_at.strftime("%F, %I:%M %p") %>  </i></small></h6>
+    <p><%= Emojify::emojify private_conversation.body %></p>
+    <% if private_conversation.attachment.attached? %>
+      <div class="attachment">
+        <image src="<%=(url_for(private_conversation.attachment))%>" style="width:30px;height:auto;">
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<p>
-  <% if private_conversation.attachment.attached? %>
-    <div class="attachment">
-      <image src="<%=(url_for(private_conversation.attachment))%>">
-    </div>
-  <% end %>
-</p> 

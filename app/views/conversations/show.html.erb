@@ -1,19 +1,24 @@
+
 <%= render "common/header" %>
 
-<h1>Chatting with <%= @conversation.with(current_user).full_name %></h1>
-<div id="conversation-main">
+<h3>Chatting with <%= @conversation.with(current_user).full_name %></h3>
+
+<div id="conversation-main" style="overflow:scroll; height:300px;">
   <div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
     <%= render @conversation.private_conversations %>
   </div>
-  <%= form_for @private_conversation do |f| %>
-    <%= hidden_field_tag 'conversation_id', @conversation.id %>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-    <br>
-    <%= f.label "Image" %>
-    <%= f.file_field :attachment %>
-    <br>
-    <%= f.submit %>
-  <% end %>
 </div>
+
+<%= form_for @private_conversation do |f| %>
+  <%= hidden_field_tag 'conversation_id', @conversation.id %>
+  <%= f.text_field :body, style: "width:100%;" %>
+  <br>
+  <%= f.file_field :attachment %>
+  <br>
+<% end %>
+
+<script>
+  var objDiv = document.getElementById("conversation-main");
+  objDiv.scrollTop = objDiv.scrollHeight;
+</script>
 
