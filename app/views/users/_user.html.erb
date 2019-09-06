@@ -1,6 +1,6 @@
 <% if current_user.email != user.email %>
   <li>
-    <%= user.email %> | <%= link_to 'send a message', new_private_conversation_path(receiver_id: user) %>
+    <%= user.email %> | <%= link_to 'chat', new_private_conversation_path(receiver_id: user) %>
   </li>
 <% end%>
 

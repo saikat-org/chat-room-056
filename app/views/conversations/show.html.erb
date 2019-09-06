@@ -3,7 +3,7 @@
 
 <h3>Chatting with <%= @conversation.with(current_user).full_name %></h3>
 
-<div id="conversation-main" style="overflow:scroll; height:300px;">
+<div id="conversation-main" style="overflow:scroll; height:350px;" >
   <div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
     <%= render @conversation.private_conversations %>
   </div>
@@ -18,7 +18,9 @@
 <% end %>
 
 <script>
-  var objDiv = document.getElementById("conversation-main");
-  objDiv.scrollTop = objDiv.scrollHeight;
+  $(document).ready(function(){
+    var objDiv = document.getElementById("conversation-main");
+    objDiv.scrollTop = objDiv.scrollHeight;
+  })
 </script>
 
