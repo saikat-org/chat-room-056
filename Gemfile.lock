@@ -290,7 +290,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  devise
+  devise (>= 4.7.1)
   gemoji (~> 3.0)
   gon (~> 6.0, >= 6.0.1)
   jbuilder (~> 2.5)
