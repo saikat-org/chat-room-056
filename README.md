@@ -12,5 +12,6 @@ chat_room is created using Rails action-cable. This chat-room supports broadcast
 5. Configure devise: https://www.youtube.com/watch?v=zJYuLebl-Js&t=480s
 6. For deployment: https://medium.com/@felipeluizsoares/automatically-deploy-with-travis-ci-and-heroku-ddba1361647f
 7. https://medium.com/@anaharris/how-to-add-image-upload-functionality-to-your-rails-app-9f7fc3f3d042
+8. https://www.w3schools.com/bootstrap4/
 
 ![chat room example](/chat_room.gif?raw=true "Chat room example")
