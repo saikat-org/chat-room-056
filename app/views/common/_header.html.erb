@@ -16,6 +16,7 @@
       <% end %>
       <span><strong><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></strong></span>
       <span><%= link_to "Sign out", destroy_user_session_path, {method: :delete} %></span>
+      <span><%= link_to "Edit", edit_user_registration_path(current_user)  %></span>
     </div>
   </div>
 </div>
